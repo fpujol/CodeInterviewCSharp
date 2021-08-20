@@ -5,7 +5,7 @@ using Xunit;
 namespace CodeInterviewTests
 {
 
-    public class PalindromeTest
+    public class ReverseWordOrderTest
     {
         /// <summary>
         /// This should test the reverse string
@@ -13,14 +13,10 @@ namespace CodeInterviewTests
         /// <param name="origin"></param>
         /// <param name="expected"></param>
         [Theory]
-        [InlineData("madam", "Palindrome")]
-        [InlineData("step on no pets", "Palindrome")]
-        [InlineData("book", "Not Palindrome")]
-        [InlineData("1221", "Palindrome")]
-        [InlineData("dad", "Palindrome")]
-        public void Should_A_String_Be_Palindrome_Or_Not(string origin, string expected)
+        [InlineData("Welcome to Csharp corner", "corner Csharp to Welcome")]
+        public void Should_Word_Order_Be_Reversed(string origin, string expected)
         {
-            Palindrome sut = new Palindrome();
+            ReverseWordOrder sut = new ReverseWordOrder();
             var result = sut.Run(origin);
             Assert.Equal(expected, result);
         }
